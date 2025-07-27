@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import ChoosePage from "./pages/ChoosePage";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
       <Route 
         path="/"
         element={
-          <ChoosePage />
+          <Home />
         }
       />
     </Routes>
