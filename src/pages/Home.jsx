@@ -10,9 +10,14 @@ const Home = () => {
       />
       <div className="relative h-screen flex flex-col items-center justify-center">
         <div
-          className="font-montserrat text-6xl font-bold bg-gradient-to-tr from-[#8E8E8E] via-[#A7A7A7] via-[#BFBFBF] via-[#D7D7D7] to-[#F5F5F5] bg-clip-text text-transparent"
+          className="flex flex-col justify-start"
         >
-          FullStack Developer
+          <div className="text-white pl-1">
+          Hello, I'm Haseeth. An Aspiring Engineer.
+          </div>
+          <div className="font-montserrat text-6xl font-bold bg-gradient-to-tr from-[#8E8E8E] via-[#A7A7A7] via-[#BFBFBF] via-[#D7D7D7] to-[#F5F5F5] bg-clip-text text-transparent">
+             FullStack Developer
+          </div>
         </div>
       </div>
     </div>
