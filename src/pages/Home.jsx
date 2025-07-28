@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import pic from "../assets/tailwindcss-mark.d52e9897.svg";
+
 
 const Home = () => {
   const cursorRef = useRef(null);
@@ -42,13 +44,12 @@ const Home = () => {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       },
       {
-        name: "Next.js",
-        src: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
-        bg: true,
+        name: "JavaScript",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       },
       {
         name: "Tailwind",
-        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+        src: pic
       },
       {
         name: "HTML",
@@ -57,10 +58,6 @@ const Home = () => {
       {
         name: "CSS",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      },
-      {
-        name: "JavaScript",
-        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       },
     ],
     backend: [
@@ -76,10 +73,6 @@ const Home = () => {
       {
         name: "MongoDB",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      },
-      {
-        name: "Firebase",
-        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
       },
     ],
     others: [
@@ -99,6 +92,21 @@ const Home = () => {
       {
         name: "Vercel",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+        bg: true,
+      },
+      {
+        name: "Docker",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+        bg: true,
+      },
+      {
+        name: "Postman",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+        bg: true,
+      },
+      {
+        name: "VS Code",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
         bg: true,
       },
     ],
