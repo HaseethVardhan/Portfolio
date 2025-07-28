@@ -5,6 +5,8 @@ const Home = () => {
   const requestRef = useRef(null);
 
   useEffect(() => {
+     if (window.innerWidth < 768) return;
+
     const cursor = cursorRef.current;
     let mouseX = 0;
     let mouseY = 0;
@@ -49,30 +51,30 @@ const Home = () => {
       ></div>
 
       <div className="fixed max-w-[500px] w-[80%] h-14 top-6 flex flex-row justify-around items-center backdrop-blur-sm z-999 bg-[#ffffff16] rounded-3xl">
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out text-sm sm:text-base md:text-base hover:text-base hover:font-normal sm:hover:text-lg md:hover:text-lg">
           Home
         </p>
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out text-sm sm:text-base md:text-base hover:text-base hover:font-normal sm:hover:text-lg md:hover:text-lg">
           About
         </p>
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out text-sm sm:text-base md:text-base hover:text-base hover:font-normal sm:hover:text-lg md:hover:text-lg">
           Projects
         </p>
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out text-sm sm:text-base md:text-base hover:text-base hover:font-normal sm:hover:text-lg md:hover:text-lg">
           Contact
         </p>
       </div>
 
       <div className="relative h-screen flex flex-col items-center justify-center">
         <div className="flex flex-col justify-start text-center">
-          <div className="text-white font-poppins font-extralight pl-1">
+          <div className="text-white font-poppins font-extralight pl-1 text-sm sm:text-base md:text-base">
             Hello, I'm Haseeth. An Aspiring Engineer.
           </div>
-          <div className="font-montserrat text-6xl font-bold bg-gradient-to-tr from-[#8E8E8E] via-[#A7A7A7] via-[#BFBFBF] via-[#D7D7D7] to-[#F5F5F5] bg-clip-text text-transparent ">
+          <div className="font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-tr from-[#8E8E8E] via-[#A7A7A7] via-[#BFBFBF] via-[#D7D7D7] to-[#F5F5F5] bg-clip-text text-transparent ">
             FULLSTACK DEVELOPER
           </div>
         </div>
-        <button className="w-25 h-10 mt-4 text-[#ffffffd7] backdrop-blur-sm z-99 bg-[#ffffff16] rounded-xl text-center font-poppins font-extralight border-[#ffffff3b] border-1 transition-all duration-200 ease-in-out hover:w-30 hover:h-12 hover:text-lg">
+        <button className="px-6 py-2 mt-4 text-[#ffffffd7] backdrop-blur-sm z-50 bg-[#ffffff16] rounded-xl text-center font-poppins font-extralight border border-[#ffffff3b] transition-all duration-200 ease-in-out hover:scale-105 hover:text-lg">
           Resume
         </button>
       </div>
