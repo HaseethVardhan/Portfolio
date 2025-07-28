@@ -1,36 +1,34 @@
 import { useEffect, useRef } from "react";
 
 const Home = () => {
-
   const cursorRef = useRef(null);
   const requestRef = useRef(null);
 
   useEffect(() => {
-  const cursor = cursorRef.current;
-  let mouseX = 0;
-  let mouseY = 0;
+    const cursor = cursorRef.current;
+    let mouseX = 0;
+    let mouseY = 0;
 
-  const updateCursor = () => {
-    if (cursor) {
-      cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
-    }
+    const updateCursor = () => {
+      if (cursor) {
+        cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+      }
+      requestRef.current = requestAnimationFrame(updateCursor);
+    };
+
+    const handleMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
     requestRef.current = requestAnimationFrame(updateCursor);
-  };
 
-  const handleMouseMove = (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  };
-
-  window.addEventListener("mousemove", handleMouseMove);
-  requestRef.current = requestAnimationFrame(updateCursor);
-
-  return () => {
-    window.removeEventListener("mousemove", handleMouseMove);
-    cancelAnimationFrame(requestRef.current);
-  };
-}, []);
-
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(requestRef.current);
+    };
+  }, []);
 
   return (
     <div className="min-h-screen w-full relative bg-black flex flex-col items-center">
@@ -42,19 +40,27 @@ const Home = () => {
         }}
       />
 
-       <div
-  ref={cursorRef}
-  className="fixed top-0 left-0 w-16 h-16 rounded-full backdrop-blur-xs bg-white/8 z-40 pointer-events-none mix-blend-lighten transition-transform duration-75 ease-out"
-  style={{
-    transform: "translate(-50%, -50%)",
-  }}
-></div>
+      <div
+        ref={cursorRef}
+        className="fixed top-0 left-0 w-16 h-16 rounded-full backdrop-blur-xs bg-white/8 z-40 pointer-events-none mix-blend-lighten transition-transform duration-75 ease-out"
+        style={{
+          transform: "translate(-50%, -50%)",
+        }}
+      ></div>
 
       <div className="fixed max-w-[500px] w-[80%] h-14 top-6 flex flex-row justify-around items-center backdrop-blur-sm z-999 bg-[#ffffff16] rounded-3xl">
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">Home</p>
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">About</p>
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">Projects</p>
-        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">Contact</p>
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+          Home
+        </p>
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+          About
+        </p>
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+          Projects
+        </p>
+        <p className="font-[200] text-[#ffffffd7] font-poppins transition-all duration-100 ease-in-out hover:font-normal hover:text-lg">
+          Contact
+        </p>
       </div>
 
       <div className="relative h-screen flex flex-col items-center justify-center">
@@ -66,7 +72,9 @@ const Home = () => {
             FULLSTACK DEVELOPER
           </div>
         </div>
-        
+        <button className="w-25 h-10 mt-4 text-[#ffffffd7] backdrop-blur-sm z-99 bg-[#ffffff16] rounded-xl text-center font-poppins font-extralight border-[#ffffff3b] border-1 transition-all duration-200 ease-in-out hover:w-30 hover:h-12 hover:text-lg">
+          Resume
+        </button>
       </div>
     </div>
   );
