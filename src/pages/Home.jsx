@@ -74,6 +74,18 @@ const Home = () => {
         name: "MongoDB",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       },
+      {
+        name: "MySQL",
+        src: "https://cdn.jsdelivr.net/npm/devicons@1.8.0/!SVG/mysql.svg",
+      },
+      {
+        name: "Socket.IO",
+        src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
+      },
+      {
+        name: "Java",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      },
     ],
     others: [
       {
