@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import pic from "../assets/tailwindcss-mark.d52e9897.svg";
 import partnr_logo from "../assets/partnr_promo.png";
 import watr_logo from "../assets/watrlogo.png";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const cursorRef = useRef(null);
@@ -402,7 +403,7 @@ const Home = () => {
       {/* Contact Section */}
       <section
         id="contact"
-        className="h-screen w-full snap-start flex items-center justify-center px-4 sm:px-8"
+        className="h-screen w-full snap-start flex flex-col items-center justify-center px-4 sm:px-8"
       >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -470,11 +471,14 @@ const Home = () => {
             </motion.a>
           </div>
         </motion.div>
+        <div className="w-full py-5">
+          <Footer />
+        </div>
       </section>
+        {/* <div className="w-full flex justify-center items-center p-4">
+          <Footer />
+        </div> */}
 
-      {/* Future Sections: Add here */}
-      {/* <section id="projects" className="h-screen snap-start">...</section> */}
-      {/* <section id="contact" className="h-screen snap-start">...</section> */}
     </div>
   );
 };
