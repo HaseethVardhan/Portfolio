@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import pic from "../assets/tailwindcss-mark.d52e9897.svg";
-
+import partnr_logo from "../assets/partnr_promo.png";
+import watr_logo from "../assets/watrlogo.png";
 
 const Home = () => {
   const cursorRef = useRef(null);
@@ -49,7 +50,7 @@ const Home = () => {
       },
       {
         name: "Tailwind",
-        src: pic
+        src: pic,
       },
       {
         name: "HTML",
@@ -124,6 +125,25 @@ const Home = () => {
     ],
   };
 
+  const projects = [
+    {
+      title: "Partnr",
+      image: partnr_logo, // Replace with your actual image URLs
+      description:
+        "A social platform to find people in tech based on skills and interests.",
+      github: "https://github.com/haseethvardhan/partnr",
+      live: "https://partnr.onrender.com",
+    },
+    {
+      title: "Watr",
+      image: watr_logo,
+      description:
+        "A prototype subscription-based water delivery web platform for local suppliers and users.",
+      github: "https://github.com/haseethvardhan/watr-delivery-app",
+      live: "null",
+    },
+  ];
+
   return (
     <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-black">
       {/* Cursor */}
@@ -184,7 +204,7 @@ const Home = () => {
           <div className="z-1 font-montserrat text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-tr from-[#8E8E8E] to-[#F5F5F5] bg-clip-text text-transparent mt-2">
             FULLSTACK DEVELOPER
           </div>
-          <button className="mx-auto px-6 py-2 mt-6 text-[#ffffffd7] backdrop-blur-sm z-99 bg-[#ffffff16] rounded-xl text-center font-poppins font-extralight border border-[#ffffff3b] transition-all duration-200 ease-in-out hover:scale-105 hover:text-lg w-fit">
+          <button className="mx-auto px-6 py-2 mt-6 text-[#ffffffd7] backdrop-blur-sm z-45 bg-[#ffffff16] rounded-xl text-center font-poppins font-extralight border border-[#ffffff3b] transition-all duration-200 ease-in-out hover:scale-105 hover:text-lg w-fit">
             Resume
           </button>
         </div>
@@ -223,7 +243,7 @@ const Home = () => {
               Education
             </h1>
 
-            <div className="flex flex-col w-full px-4 py-3 justify-between backdrop-blur-sm z-99 bg-[#0d0d0dc0] rounded-xl border border-[#ffffff24] text-xs sm:text-base">
+            <div className="flex flex-col w-full px-4 py-3 justify-between backdrop-blur-sm z-45 bg-[#0d0d0dc0] rounded-xl border border-[#ffffff24] text-xs sm:text-base">
               <div className="flex flex-row w-full justify-between">
                 <p className="font-poppins">Computer Science</p>
                 <p className="font-poppins text-[#ffffff8d] font-extralight">
@@ -248,43 +268,42 @@ const Home = () => {
             Skills
           </h1>
 
-          <div className="p-4 sm:p-6 rounded-xl backdrop-blur-sm relative isolate z-99 bg-[#0d0d0dc0] border border-[#ffffff24] max-w-3xl mx-auto">
+          <div className="p-4 sm:p-6 rounded-xl backdrop-blur-sm relative isolate z-45 bg-[#0d0d0dc0] border border-[#ffffff24] max-w-3xl mx-auto">
             {/* Tab Headers */}
             {/* Tab Headers with Animation */}
             <div className="relative flex justify-around mb-6 flex-wrap sm:flex-nowrap">
-  {["frontend", "backend", "others"].map((tab) => {
-    const isActive = activeTab === tab;
-    return (
-      <div
-        key={tab}
-        onClick={() => setActiveTab(tab)}
-        className="relative z-10 px-4 sm:px-8 py-1 sm:py-2 font-poppins cursor-pointer text-xs sm:text-sm"
-      >
-        {isActive && (
-          <motion.div
-            layoutId="tabHighlight"
-            className="absolute inset-0 bg-[#ffffff16] rounded-md backdrop-blur-sm"
-            transition={{
-              type: "spring",
-              stiffness: 250,
-              damping: 40,
-            }}
-          />
-        )}
-        <span
-          className={`relative z-10 ${
-            isActive
-              ? "text-white font-medium"
-              : "text-gray-400 hover:text-white"
-          }`}
-        >
-          {tab.charAt(0).toUpperCase() + tab.slice(1)}
-        </span>
-      </div>
-    );
-  })}
-</div>
-
+              {["frontend", "backend", "others"].map((tab) => {
+                const isActive = activeTab === tab;
+                return (
+                  <div
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className="relative z-10 px-4 sm:px-8 py-1 sm:py-2 font-poppins cursor-pointer text-xs sm:text-sm"
+                  >
+                    {isActive && (
+                      <motion.div
+                        layoutId="tabHighlight"
+                        className="absolute inset-0 bg-[#ffffff16] rounded-md backdrop-blur-sm"
+                        transition={{
+                          type: "spring",
+                          stiffness: 250,
+                          damping: 40,
+                        }}
+                      />
+                    )}
+                    <span
+                      className={`relative z-10 ${
+                        isActive
+                          ? "text-white font-medium"
+                          : "text-gray-400 hover:text-white"
+                      }`}
+                    >
+                      {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
 
             {/* Tech Grid */}
             <div className="flex justify-center">
@@ -309,6 +328,70 @@ const Home = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        id="projects"
+        className="min-h-screen w-full flex flex-col items-center justify-center 
+  px-4 sm:px-8 md:px-20 snap-start scroll-mt-24"
+      >
+        <div className="w-full max-w-4xl text-center text-[#ffffffd7] mx-auto">
+          <h1 className="font-montserrat font-[400] text-2xl sm:text-3xl mb-4">
+            Projects
+          </h1>
+
+          <div className="w-full max-w-6xl mx-auto px-4">
+            <div className="flex flex-wrap justify-center gap-6 mt-6">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="z-45 w-full xs:w-[90%] sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)] 
+  max-w-[350px] backdrop-blur-sm bg-[#0d0d0dc0] border border-[#ffffff24] 
+  rounded-xl p-3 sm:p-4 flex flex-col justify-between 
+  hover:scale-[1.02] transition-transform duration-200 ease-in-out"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-32 sm:h-40 object-cover rounded-md mb-3"
+                  />
+                  <h2 className="text-white font-montserrat font-semibold text-lg mb-2">
+                    {project.title}
+                  </h2>
+                  <p className="text-[#ffffffd7] font-poppins text-sm font-light mb-4">
+                    {project.description}
+                  </p>
+                  <div className="flex justify-between text-sm font-poppins text-[#ffffffd7]">
+                    {project.live !== "null" && <a
+                      href={project.live}
+                      target="_blank"
+                      className="underline hover:text-white transition"
+                    >
+                      Live
+                    </a>}
+                    {
+                      project.live === "null" && <p
+                      href={project.live}
+                      target="_blank"
+                      className="underline hover:text-white transition opacity-0 select-none"
+                    >
+                      Live
+                    </p>
+                    }
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      className="underline hover:text-white transition"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
