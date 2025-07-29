@@ -366,22 +366,24 @@ const Home = () => {
                     {project.description}
                   </p>
                   <div className="flex justify-between text-sm font-poppins text-[#ffffffd7]">
-                    {project.live !== "null" && <a
-                      href={project.live}
-                      target="_blank"
-                      className="underline hover:text-white transition"
-                    >
-                      Live
-                    </a>}
-                    {
-                      project.live === "null" && <p
-                      href={project.live}
-                      target="_blank"
-                      className="underline hover:text-white transition opacity-0 select-none"
-                    >
-                      Live
-                    </p>
-                    }
+                    {project.live !== "null" && (
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        className="underline hover:text-white transition"
+                      >
+                        Live
+                      </a>
+                    )}
+                    {project.live === "null" && (
+                      <p
+                        href={project.live}
+                        target="_blank"
+                        className="underline hover:text-white transition opacity-0 select-none"
+                      >
+                        Live
+                      </p>
+                    )}
                     <a
                       href={project.github}
                       target="_blank"
@@ -395,6 +397,79 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="h-screen w-full snap-start flex items-center justify-center px-4 sm:px-8"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full max-w-3xl mx-auto p-6 sm:p-10 backdrop-blur-sm bg-[#0d0d0dc0] border border-[#ffffff24] rounded-xl z-45"
+        >
+          <p className="font-poppins font-[200] text-sm sm:text-base mb-6 leading-relaxed text-[#ffffffd7]">
+            I'm always open to discussing new opportunities, collaborations, or
+            simply chatting about tech. Feel free to reach out via any of the
+            platforms below!
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4">
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://linkedin.com/in/haseethvardhankaduru"
+              target="_blank"
+              className="flex items-center gap-2 px-5 py-2 rounded-lg border border-[#ffffff30] text-white hover:bg-white/10 transition-all"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                alt="LinkedIn"
+                className="w-5 h-5"
+              />
+              <span className="font-poppins text-sm">LinkedIn</span>
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://x.com/haseethvardhan"
+              target="_blank"
+              className="flex items-center gap-2 px-5 py-2 rounded-lg border border-[#ffffff30] text-white hover:bg-white/10 transition-all"
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg"
+                alt="X"
+                className="w-4 h-4 invert-100"
+              />
+              <span className="font-poppins text-sm">X / Twitter</span>
+            </motion.a>
+
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=haseethvardhan01@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-5 py-2 rounded-lg border border-[#ffffff30] text-white hover:bg-white/10 transition-all"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 4h16v16H4z" />
+                <path d="M22 6l-10 7L2 6" />
+              </svg>
+              <span className="font-poppins text-sm">Email</span>
+            </motion.a>
+          </div>
+        </motion.div>
       </section>
 
       {/* Future Sections: Add here */}
