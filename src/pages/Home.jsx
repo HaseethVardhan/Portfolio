@@ -51,6 +51,10 @@ const Home = () => {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       },
       {
+        name: "TypeScript",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      },
+      {
         name: "Tailwind",
         src: pic,
       },
@@ -78,8 +82,8 @@ const Home = () => {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       },
       {
-        name: "MySQL",
-        src: "https://cdn.jsdelivr.net/npm/devicons@1.8.0/!SVG/mysql.svg",
+        name: "PostgreSQL",
+        src: "https://cdn.jsdelivr.net/npm/devicons@1.8.0/!SVG/postgresql.svg",
       },
       {
         name: "Socket.IO",
@@ -207,7 +211,7 @@ const Home = () => {
             FULLSTACK DEVELOPER
           </div>
           <button className="mx-auto px-6 py-2 mt-6 text-[#ffffffd7] backdrop-blur-sm z-45 bg-[#ffffff16] rounded-xl text-center font-poppins font-extralight border border-[#ffffff3b] transition-all duration-200 ease-in-out hover:scale-105 hover:text-lg w-fit">
-            <Link to="https://drive.google.com/file/d/1293QfauhgAcCrAExiJHIV6fNqytprvi2/view?usp=drive_link" >Resume</Link>
+            <Link to="https://drive.google.com/file/d/1m5STcYf1BtYy7d6xyj6pq7Fm2sjoKWk1/view?usp=drive_link" >Resume</Link>
           </button>
         </div>
       </section>
