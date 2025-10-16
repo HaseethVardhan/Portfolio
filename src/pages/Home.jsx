@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import pic from "../assets/tailwindcss-mark.d52e9897.svg";
 import partnr_logo from "../assets/partnr_promo.png";
 import watr_logo from "../assets/watrlogo.png";
+import flairai_logo from "../assets/flairai_logo.png"
 import Footer from "../components/Footer";
 
 const Home = () => {
@@ -147,6 +148,14 @@ const Home = () => {
         "A prototype subscription-based water delivery web platform for local suppliers and users.",
       github: "https://github.com/haseethvardhan/watr-delivery-app",
       live: "null",
+    },
+    {
+      title: "FlairAI-Clone",
+      image: flairai_logo,
+      description:
+        "A purely frontend UI clone of flairAI website made with React. It has nothing to do with official flair ai website.",
+      github: "https://github.com/HaseethVardhan/flairaiClone",
+      live: "https://flairai-clone.vercel.app/",
     },
   ];
 
