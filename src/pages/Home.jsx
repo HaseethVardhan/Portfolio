@@ -220,7 +220,7 @@ const Home = () => {
             FULLSTACK DEVELOPER
           </div>
           <button className="mx-auto px-6 py-2 mt-6 text-[#ffffffd7] backdrop-blur-sm z-45 bg-[#ffffff16] rounded-xl text-center font-poppins font-extralight border border-[#ffffff3b] transition-all duration-200 ease-in-out hover:scale-105 hover:text-lg w-fit">
-            <Link to="https://drive.google.com/file/d/1hULTQO0tYF5nnrgDsCztG6uZ1wR9CE3r/view?usp=sharing" >Resume</Link>
+            <Link to="https://drive.google.com/file/d/1gkKO8L4mWLbrFtWEV-fRaL3tNlp_6ZIR/view?usp=sharing" >Resume</Link>
           </button>
         </div>
       </section>
