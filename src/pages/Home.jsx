@@ -6,6 +6,8 @@ import partnr_logo from "../assets/partnr_promo.png";
 import watr_logo from "../assets/watrlogo.png";
 import flairai_logo from "../assets/flairai_logo.png"
 import Footer from "../components/Footer";
+import BlogCard from "../components/BlogCard";
+import { getBlogPreviews } from "../blogsdata/blogs";
 
 const Home = () => {
   const cursorRef = useRef(null);
@@ -48,6 +50,10 @@ const Home = () => {
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       },
       {
+        name: "Next.js",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
         name: "JavaScript",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       },
@@ -72,6 +78,10 @@ const Home = () => {
       {
         name: "Node.js",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      },
+      {
+        name: "Nest.JS",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-original.svg",
       },
       {
         name: "Express",
@@ -190,6 +200,12 @@ const Home = () => {
         >
           Projects
         </a>
+        <Link
+          to="/blogs"
+          className="text-sm sm:text-base text-[#ffffffd7] font-poppins font-[200] transition-all duration-100 ease-in-out hover:font-normal hover:text-lg"
+        >
+          Blogs
+        </Link>
         <a
           href="#contact"
           className="text-sm sm:text-base text-[#ffffffd7] font-poppins font-[200] transition-all duration-100 ease-in-out hover:font-normal hover:text-lg"
@@ -411,6 +427,46 @@ const Home = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Recent Blogs Section */}
+      <section
+        id="blogs"
+        className="min-h-screen w-full flex flex-col items-center justify-center px-4 sm:px-8 md:px-20 snap-start"
+      >
+        <div className="w-full max-w-4xl text-center text-[#ffffffd7] mx-auto">
+          <h1 className="font-montserrat font-[400] text-2xl sm:text-3xl mb-8">
+            Recent Blogs
+          </h1>
+
+          <div className="flex flex-wrap justify-center gap-6 mb-8">
+            {getBlogPreviews().slice(0, 3).map((blog) => (
+              <div key={blog.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[380px]">
+                <BlogCard blog={blog} />
+              </div>
+            ))}
+          </div>
+
+          <Link
+            to="/blogs"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#ffffff10] border border-[#ffffff24] text-white rounded-xl font-poppins hover:bg-[#ffffff20] transition-all duration-200 hover:scale-105"
+          >
+            View All Blogs
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
         </div>
       </section>
 
