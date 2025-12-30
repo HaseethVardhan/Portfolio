@@ -162,7 +162,20 @@ const BlogDetail = () => {
   useEffect(() => {
     // Scroll to top when blog loads
     window.scrollTo(0, 0);
-  }, [slug]);
+
+    // Send analytics request when blog is opened
+    if (blog && blog.title) {
+      fetch("https://blogs-backend-analytics.vercel.app/api/analytics", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title: String(blog.title) }),
+      }).catch(() => {
+        // Silently fail - analytics should not affect user experience
+      });
+    }
+  }, [slug, blog]);
 
   // 404 - Blog not found
   if (!blog) {
