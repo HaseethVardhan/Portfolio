@@ -46,14 +46,19 @@ const BlogImage = ({ src, alt, caption }) => {
 const parseInlineFormatting = (text) => {
   if (!text || typeof text !== 'string') return text;
   
-  // Split by **text** pattern and create elements
-  const parts = text.split(/(\*\*.*?\*\*)/g);
+  // Split by **text** or _text_ pattern and create elements
+  const parts = text.split(/(\*\*.*?\*\*|_.*?_)/g);
   
   return parts.map((part, index) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       // Remove ** markers and wrap in strong tag
       const boldText = part.slice(2, -2);
       return <strong key={index} className="font-[600] text-white">{boldText}</strong>;
+    }
+    if (part.startsWith('_') && part.endsWith('_')) {
+      // Remove _ markers and wrap in em tag
+      const italicText = part.slice(1, -1);
+      return <em key={index} className="italic text-inherit">{italicText}</em>;
     }
     return part;
   });
@@ -80,7 +85,7 @@ const ContentRenderer = ({ content }) => {
         return (
           <p
             key={index}
-            className="text-[#ffffffe8] font-poppins font-[400] text-base leading-relaxed mb-4"
+            className="text-[#ffffffd0] font-poppins font-[400] text-base leading-relaxed mb-4"
           >
             {parseInlineFormatting(block.text)}
           </p>
@@ -107,7 +112,7 @@ const ContentRenderer = ({ content }) => {
             key={index}
             className="my-6 pl-4 border-l-4 border-[#ffffff40] italic"
           >
-            <p className="text-[#ffffffe8] font-poppins font-[400] text-base leading-relaxed">
+            <p className="text-[#ffffffd0] font-poppins font-[400] text-base leading-relaxed">
               "{parseInlineFormatting(block.text)}"
             </p>
             {block.author && (
@@ -127,7 +132,7 @@ const ContentRenderer = ({ content }) => {
             {block.items.map((item, i) => (
               <li
                 key={i}
-                className="text-[#ffffffe8] font-poppins font-[400] text-base leading-relaxed list-disc"
+                className="text-[#ffffffd0] font-poppins font-[400] text-base leading-relaxed list-disc"
               >
                 {parseInlineFormatting(item)}
               </li>

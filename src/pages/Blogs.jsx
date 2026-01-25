@@ -127,7 +127,7 @@ const Blogs = () => {
           {blogs.length > 0 ? (
             <div className="flex flex-wrap justify-center gap-6">
               {blogs.map((blog) => (
-                <div key={blog.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[380px]">
+                <div key={blog.id} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-[380px] flex">
                   <BlogCard blog={blog} />
                 </div>
               ))}

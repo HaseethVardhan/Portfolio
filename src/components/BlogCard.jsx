@@ -17,9 +17,9 @@ const BlogCard = ({ blog }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="group"
+      className="group h-full"
     >
-      <Link to={`/blogs/${slug}`}>
+      <Link to={`/blogs/${slug}`} className="block h-full">
         <div
           className="backdrop-blur-sm bg-[#0d0d0dc0] border border-[#ffffff24] 
           rounded-xl overflow-hidden flex flex-col h-full
@@ -51,7 +51,7 @@ const BlogCard = ({ blog }) => {
             </div>
 
             {/* Title */}
-            <h2 className="text-white font-montserrat font-semibold text-lg mb-2 group-hover:text-[#ffffffee] transition-colors">
+            <h2 className="text-white font-montserrat font-semibold text-lg mb-2 group-hover:text-[#ffffffee] transition-colors line-clamp-2 h-14">
               {title}
             </h2>
 

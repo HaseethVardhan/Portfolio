@@ -2,6 +2,8 @@
 // Each blog contains metadata and content sections
 // Content sections can be: heading, text, image, or code
 
+import { text } from "framer-motion/client";
+
 export const blogs = [
   {
     id: 1,
@@ -170,7 +172,316 @@ export const blogs = [
         text: "Keep fighting. Never give up.\nAll the best, soldier. 🫡"
       }
     ]
+  },
+  {
+    id: 2,
+    slug: "understanding-context-in-ai",
+    title: "Understanding Context in AI: A Beginner’s Guide to Vector Databases",
+    excerpt: "Learn about context, it's importance in AI and how to manage it using vector databases",
+    date: "2026-01-25",
+    tags: ["AI", "Database"],
+    thumbnail:
+      "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769348493/Gemini_Generated_Image_c04qnpc04qnpc04q_d67gbe.png",
+    content: [
+  {
+    type: "text",
+    text: "If you are a beginner or a developer looking to get into Gen-AI or Agentic AI, but have no prior knowledge, this might be a good starting point. If you already dipped your hands into AI, this might seem very basic for you, so you may skip it."
+  },
+  {
+    type: "text",
+    text: "There are no major prerequisites for this, but if you know how basic APIs work, it would be easy to follow. This article is purely theoretical and has no code."
+  },
+  {
+    type: "text",
+    text: "It has been kept in mind that almost everyone can understand it, so some things might have been simplified for the sake of understanding."
+  },
+  {
+    type: "text",
+    text: "Throughout the article, we'll learn by taking the example of an AI chatbot. So let's dive in."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "What is context?"
+  },
+  {
+    type: "text",
+    text: "In English, context means _\"the situation within which something exists or happens, and that can help explain it\"_."
+  },
+  {
+    type: "text",
+    text: "Emphasize the words **\"that can help explain it\"**."
+  },
+  {
+    type: "text",
+    text: "To understand simply, let's take an example. You overheard your friends talking about something. One of your friends said,"
+  },
+  {
+    type: "quote",
+    text: "I like the yellow one. I love the way it sounds"
+  },
+  {
+    type: "text",
+    text: "Since you weren't there from the beginning, you don't know what they are talking about. Maybe they are talking about a yellow car that makes a great exhaust sound, maybe they are talking about a yellow bluetooth speaker, or maybe it is something entirely different. You don't exactly know what it is."
+  },
+  {
+    type: "text",
+    text: "Why? Because you don't know the **CONTEXT**."
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/c_pad,b_gen_fill,ar_16:9/v1769345228/Screenshot_2026-01-25_181537_yvurvx.png" 
+  },
+  {
+    type: "text",
+    text: "If you know the situation or previous conversation, you would have explained it. To prove this, now I'll show you the conversation the friends are having. Can you guess what they are talking about?"
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769345726/Screenshot_2026-01-25_182506_ylfpua.png" 
+  },
+  {
+    type: "text",
+    text: "Yes. They are talking about a yellow car. You were able to explain it now because you know the situation and the previous conversations."
+  },
+  {
+    type: "text",
+    text: "I hope you understand what context means."
+  },
+  {
+    type: "text",
+    text: "From now on, let's learn with an example of an AI chatbot."
+  },
+  {
+    type: "text",
+    text: "This is how it works,"
+  },
+  {
+    type: "list",
+    items: [
+      "There is an app where users will send a message",
+      "This message comes to your server",
+      "Now your server will ask your AI provider’s server (OpenAI, Gemini, etc) for a response through an API call",
+      "They will send a response to your server",
+      "Which sends it to your app",
+      "Now your user can see the response"
+    ]
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769346421/Gemini_Generated_Image_4b1jwr4b1jwr4b1j_lhck8h.png"
+  },
+  {
+    type: "text",
+    text: "But whenever you are using an API from OpenAI, Google Gemini, etc, every call you make is treated as a fresh new independent message. It doesn't remember any previous interactions."
+  },
+  {
+    type: "text",
+    text: "So we have a problem now. It doesn't remember anything the user has said apart from the latest message. How can we solve it?"
+  },
+  {
+    type: "text",
+    text: "Let's discuss solutions."
+  },
+  {
+    type: "text",
+    text: "You might say, Haseeth, since my API doesn't remember anything,"
+  },
+  {
+    type: "list",
+    items: [
+      "I will save all the previous messages in my database",
+      "When a user sends a new message, I will combine the previous messages and the new message and send all the messages through the API",
+      "Now AI has all the previous messages, so it has the context, hence it can answer and explain properly."
+    ]
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769346798/Gemini_Generated_Image_j6qhzhj6qhzhj6qh_apxtz4.png"
+  },
+  {
+    type: "text",
+    text: "Yes. You are correct. This time, AI will answer properly."
+  },
+  {
+    type: "text",
+    text: "But there are a few problems with this."
+  },
+  {
+    type: "list",
+    items: [
+      "API calls are costly",
+      "All of them have some limits you cannot cross",
+      "Today, you might have a few messages, but with time, the number of messages will grow exponentially, maybe thousands of messages. You cannot send all the messages after a certain limit."
+    ]
+  },
+  {
+    type: "heading",
+    level: 4,
+    text: "How can we overcome this limitation?"
+  },
+  {
+    type: "text",
+    text: "First of all, do we need to send all the messages?"
+  },
+  {
+    type: "text",
+    text: "Let's take the example of a conversation. These are the messages stored in your database."
+  },
+  {
+    type: "list",
+    items: [
+      "_\"I want to buy an iPhone 16 pro.\"_",
+      "_\"I like the camera on it.\"_",
+      "_\"It has a good display.\"_",
+      "_\"I don't know about the battery though.\"_",
+      "_\"I like the blue color.\"_"
+    ]
+  },
+  {
+    type: "text",
+    text: "Now the user has prompted _\"What's the price?\"_"
+  },
+  {
+    type: "text",
+    text: "Since AI doesn't remember anything, it doesn't know which price the user is talking about. So we need to send the previous messages."
+  },
+  {
+    type: "text",
+    text: "But do you think we need to send all five messages?"
+  },
+  {
+    type: "text",
+    text: "No."
+  },
+  {
+    type: "text",
+    text: "We can just send _\"I want to buy an iPhone 16 Pro\"_ and _\"I like the blue color\"_."
+  },
+  {
+    type: "text",
+    text: "Now AI knows that the user is talking about a blue colored iPhone 16 Pro."
+  },
+  {
+    type: "text",
+    text: "All the other messages are irrelevant to this message. This way, we only send the necessary information to the AI, not all the messages."
+  },
+  {
+    type: "text",
+    text: "But how do we know what messages are relevant and what are irrelevant?"
+  },
+  {
+    type: "text",
+    text: "Here is where Vector Databases come into the picture."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "What are Vector Databases?"
+  },
+  {
+    type: "text",
+    text: "Vector databases are used to store and manage vector data."
+  },
+  {
+    type: "text",
+    text: "Now, what is vector data?"
+  },
+  {
+    type: "text",
+    text: "Any data or information that is represented as an array of numerical values is called vector data."
+  },
+  {
+    type: "text",
+    text: "You can convert images, texts, documents, and many other forms of data into numerical array values by using different tools."
+  },
+  {
+    type: "text",
+    text: "Now, suppose let's say we can convert a text into a numerical array. These are called Text embeddings. You can convert any form of text data into text embeddings using text embedding models. OpenAI, Gemini, and many others provide these models."
+  },
+  {
+    type: "text",
+    text: "Let us visually see how these text embeddings work."
+  },
+  {
+    type: "text",
+    text: "Below, you can see the text, and it's respective vector data/text embeddings. These numerical values will change depending on the order, spacing, and essentially the semantics of the sentence. It will capture not only plain words, but also the meaning or emotion behind the sentence. How it does is out of scope for today's article, but for now, a text embedding model will give us some numerical data, that's all we need to know."
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769347888/Screenshot_2026-01-25_161053_vjunp2.png"
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769347896/Screenshot_2026-01-25_161104_hjxz4l.png"
+  },
+  {
+    type: "text",
+    text: "These numerical values will change depending on the order, spacing, and essentially the semantics of the sentence. It will capture not only plain words, but also the meaning or emotion behind the sentence. How it does is out of scope for today's article, but for now, a text embedding model will give us some numerical data, that's all we need to know."
+  },
+  {
+    type: "text",
+    text: "A vector database will store this numerical data in a high-dimensional space. High-dimensional space allows the model to capture many subtle features of meaning at once."
+  },
+  {
+    type: "text",
+    text: "You can see the picture below, where every dot represents a piece of text (a word, sentence, or message). These words are arranged in the space based on the closeness and relation to other words. So words that are similar or have a close relationship will always stay closer to eachother."
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769348018/Screenshot_2026-01-25_160817_jjzswl.png"
+  },
+  {
+    type: "text",
+    text: "Now, let us understand how search works in vector databases."
+  },
+  {
+    type: "text",
+    text: "In a traditional database, search depends on exact matching."
+  },
+  {
+    type: "text",
+    text: "For example, if you write a query to find a \"car\", you will exactly find a \"car\" if it is present in the database, otherwise you will get null or nothing."
+  },
+  {
+    type: "text",
+    text: "In a vector database, search works by approximate matching. It need not be exactly matched."
+  },
+  {
+    type: "text",
+    text: "If you try to find \"car\", it might return you \"racecar\", \"sportscar\", \"car\", \"bike\", \"motorsports\", etc depending on your data."
+  },
+  {
+    type: "text",
+    text: "This is called semantic search. It tries to search by meaning rather than exact value. It uses multiple algorithms and models to do this. Some basic examples would be Cosine Similarity, Nearest Neighbours, etc."
+  },
+  {
+    type: "text",
+    text: "Now, coming back to our original example of an AI chatbot. Instead of storing these messages in a traditional database, we can store them in a vector database."
+  },
+  {
+    type: "text",
+    text: "When a user sends a new message, we send this message to our vector database and ask it to find related messages."
+  },
+  {
+    type: "text",
+    text: "It uses semantic search and finds a list of related messages. Now you take these messages and send it to your AI model. This way, you only send the relevant messages to your AI model."
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1769348493/Gemini_Generated_Image_c04qnpc04qnpc04q_d67gbe.png"
+  },
+  {
+    type: "text",
+    text: "By sending only relevant messages, we successfully decreased the usage of limits. Since we are sending only the relevant data, the AI model doesn’t get confused much. Hence, the cost also decreases."
+  },
+  {
+    type: "text",
+    text: "This is how a basic AI workflow for an AI chatbot looks. The majority of the AI apps use the same flow, but the complexity would be on a higher level. This is just a foundation. The main goal is to learn how the process works. Once you understand the process, you can always go deeper into every step. I hope atleast some of you learnt something new today."
   }
+]
+
+  },
 ];
 
 
