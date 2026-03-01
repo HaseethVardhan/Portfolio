@@ -167,7 +167,7 @@ const Home = () => {
       description:
         "A website which allows you to craft a beautiful love story by adding photos, love coupons, music, and heartfelt messages.",
       github: "https://github.com/HaseethVardhan/valentineswrapped",
-      live: "https://valentineswrapped.vercel.app".
+      live: "https://valentineswrapped.vercel.app",
     },
     {
       title: "Watr",
