@@ -5,6 +5,8 @@ import pic from "../assets/tailwindcss-mark.d52e9897.svg";
 import partnr_logo from "../assets/partnr_promo.png";
 import watr_logo from "../assets/watrlogo.png";
 import flairai_logo from "../assets/flairai_logo.png"
+import finai_logo from "../assets/finai_logo.png";
+import valentines_logo from "../assets/valentines_logo";
 import Footer from "../components/Footer";
 import BlogCard from "../components/BlogCard";
 import { getBlogPreviews } from "../blogsdata/blogs";
@@ -150,6 +152,22 @@ const Home = () => {
         "A social platform to find people in tech based on skills and interests.",
       github: "https://github.com/haseethvardhan/partnr",
       live: "https://partnr.onrender.com",
+    },
+    {
+      title: "FinAI",
+      image: finai_logo,
+      description:
+        "A Personal Finance tool integrated with AI to perform multi-step financial analysis.",
+      github: "https://github.com/HaseethVardhan/FinAI",
+      live: "https://finaisite.onrender.com/",
+    },
+    {
+      title: "Valentines Wrapped",
+      image: valentines_logo,
+      description:
+        "A website which allows you to craft a beautiful love story by adding photos, love coupons, music, and heartfelt messages.",
+      github: "https://github.com/HaseethVardhan/valentineswrapped",
+      live: "https://valentineswrapped.vercel.app".
     },
     {
       title: "Watr",
