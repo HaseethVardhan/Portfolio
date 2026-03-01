@@ -6,7 +6,7 @@ import partnr_logo from "../assets/partnr_promo.png";
 import watr_logo from "../assets/watrlogo.png";
 import flairai_logo from "../assets/flairai_logo.png"
 import finai_logo from "../assets/finai_logo.png";
-import valentines_logo from "../assets/valentines_logo";
+import valentines_logo from "../assets/valentines_logo.png";
 import Footer from "../components/Footer";
 import BlogCard from "../components/BlogCard";
 import { getBlogPreviews } from "../blogsdata/blogs";
