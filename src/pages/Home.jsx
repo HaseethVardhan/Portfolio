@@ -78,6 +78,10 @@ const Home = () => {
     ],
     backend: [
       {
+        name: "Java",
+        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      },
+      {
         name: "Node.js",
         src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       },
@@ -101,10 +105,6 @@ const Home = () => {
       {
         name: "Socket.IO",
         src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
-      },
-      {
-        name: "Java",
-        src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       },
     ],
     others: [
