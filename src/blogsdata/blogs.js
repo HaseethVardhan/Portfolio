@@ -482,6 +482,305 @@ export const blogs = [
 ]
 
   },
+  {
+    id: 3,
+    slug: "caching",
+    title: "Caching",
+    excerpt: "Learn about caching and how it effects performance",
+    date: "2026-03-04",
+    tags: ["SoftwareEngineering", "Database", "Backend"],
+    thumbnail:
+      "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1772622954/what-is-caching_read-through_sz8ywl.webp",
+    content: [
+  {
+    type: "heading",
+    level: 2,
+    text: "Caching"
+  },
+  {
+    type: "text",
+    text: "You and your friend successfully built a B2B SaaS website."
+  },
+  {
+    type: "text",
+    text: "You finally got a few clients. But there is one big problem."
+  },
+  {
+    type: "text",
+    text: "Whenever your clients open the website, it takes **5–10 seconds to load**."
+  },
+  {
+    type: "text",
+    text: "Why does this happen?"
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "What Happens When You Open a Website"
+  },
+  {
+    type: "text",
+    text: "Whenever someone opens a website, the following process happens:"
+  },
+  {
+    type: "list",
+    items: [
+      "Browser sends an **API request** to the server",
+      "Server receives the request and **queries the database**",
+      "Database searches and **returns the required data**",
+      "Server runs some **business logic** on the data",
+      "Server sends the **final response** to the browser",
+      "Browser **renders the page** for the user"
+    ]
+  },
+  {
+    type: "text",
+    text: "This process happens **every single time a request is made**."
+  },
+  {
+    type: "text",
+    text: "Two major things slow down this process:"
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "1. Database Calls"
+  },
+  {
+    type: "text",
+    text: "Databases store data on disks, and disk operations are much slower than memory operations."
+  },
+  {
+    type: "text",
+    text: "When your database contains **millions of records**, searching through them can take time."
+  },
+  {
+    type: "text",
+    text: "If queries are poorly optimized, things become even slower."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "2. Server Business Logic"
+  },
+  {
+    type: "text",
+    text: "Sometimes the server needs to run heavy computations."
+  },
+  {
+    type: "text",
+    text: "This could include things like data processing, transformations, analytics, or even machine learning models."
+  },
+  {
+    type: "text",
+    text: "Running these expensive operations **for every request** is inefficient."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "A Simple Example"
+  },
+  {
+    type: "text",
+    text: "Imagine you open Instagram."
+  },
+  {
+    type: "text",
+    text: "Many things on your home page change constantly."
+  },
+  {
+    type: "list",
+    items: [
+      "New posts",
+      "New stories",
+      "New messages"
+    ]
+  },
+  {
+    type: "text",
+    text: "But one thing almost never changes: **your profile picture**."
+  },
+  {
+    type: "text",
+    text: "Instagram has millions of users."
+  },
+  {
+    type: "text",
+    text: "If every time you opened the app they searched the database among millions of users just to fetch your profile picture, it would take time."
+  },
+  {
+    type: "text",
+    text: "Instead, they store frequently accessed data in something called **Cache**."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "What is Cache?"
+  },
+  {
+    type: "text",
+    text: "Cache is a **very fast storage layer** that stores frequently used data."
+  },
+  {
+    type: "text",
+    text: "Unlike databases that store data on disks, cache usually lives in **RAM (memory)**."
+  },
+  {
+    type: "text",
+    text: "RAM is extremely fast compared to disk storage."
+  },
+  {
+    type: "text",
+    text: "But RAM is also **very expensive**, so we cannot store everything in cache."
+  },
+  {
+    type: "text",
+    text: "Instead, we cache only **frequently accessed data**."
+  },
+  {
+    type: "list",
+    items: [
+      "Profile pictures",
+      "Usernames",
+      "Frequently viewed posts",
+      "Popular content"
+    ]
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "How Caching Works"
+  },
+  {
+    type: "text",
+    text: "When a request comes for the **first time**, the data is fetched from the database."
+  },
+  {
+    type: "list",
+    items: [
+      "Request reaches the server",
+      "Server queries the database",
+      "Database returns the data",
+      "Server stores a copy in the **cache**"
+    ]
+  },
+  {
+    type: "text",
+    text: "When the same data is requested again, the server checks the cache first."
+  },
+  {
+    type: "list",
+    items: [
+      "Server checks the cache",
+      "If data exists → return immediately",
+      "Database query is skipped"
+    ]
+  },
+  {
+    type: "text",
+    text: "This makes the response **much faster**."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "What If Data Changes?"
+  },
+  {
+    type: "text",
+    text: "Cached data can become outdated."
+  },
+  {
+    type: "text",
+    text: "For example, if you update your profile picture, the cached version becomes incorrect."
+  },
+  {
+    type: "text",
+    text: "To solve this, we use **cache invalidation**."
+  },
+  {
+    type: "text",
+    text: "Whenever the original data changes, the old cached value is removed."
+  },
+  {
+    type: "text",
+    text: "The next request will fetch fresh data and cache it again."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "TTL (Time To Live)"
+  },
+  {
+    type: "text",
+    text: "Another common technique is **TTL (Time To Live)**."
+  },
+  {
+    type: "text",
+    text: "Every cached item has an expiry time."
+  },
+  {
+    type: "text",
+    text: "After the expiry time passes, the cache automatically deletes that item."
+  },
+  {
+    type: "text",
+    text: "This ensures that cached data does not stay outdated forever."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "Performance Improvement"
+  },
+  {
+    type: "text",
+    text: "Let's look at a simple example."
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1772622869/Screenshot_2026-03-04_125401_x5pwfn.png"
+  },
+  {
+    type: "image",
+    src: "https://res.cloudinary.com/dbzcsfi3e/image/upload/v1772622869/Screenshot_2026-03-04_125509_pdznhh.png"
+  },
+  {
+    type: "list",
+    items: [
+      "Without cache → **1.3 seconds response time**",
+      "With cache → **200 ms response time**"
+    ]
+  },
+  {
+    type: "text",
+    text: "That is roughly **6.5× faster**."
+  },
+  {
+    type: "text",
+    text: "In production systems, improvements like this make a **huge difference** when serving thousands or millions of users."
+  },
+  {
+    type: "heading",
+    level: 2,
+    text: "Final Thoughts"
+  },
+  {
+    type: "text",
+    text: "Caching is one of the simplest yet most powerful techniques to speed up applications."
+  },
+  {
+    type: "text",
+    text: "However, caching is not the only optimization used in production systems."
+  },
+  {
+    type: "text",
+    text: "Large-scale systems also rely on CDNs, load balancing, database indexing, and background processing."
+  },
+  {
+    type: "text",
+    text: "The goal is always the same — **build systems that are fast, scalable, and reliable**."
+  }
+]
+  }
 ];
 
 
